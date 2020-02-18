@@ -1,0 +1,16 @@
+ORIZZONTALE:
+justify-content:
+
+	-center 	
+	-space-around 		--> allinea gli elementi con spazi uguali intorno ad essi
+	-space-background 	--> allinea gli elementi con spazi uguali tra di loro
+	-flex-end		--> elementi in fondo a dx
+	-flex-start		--> elementi in fondo a sx
+
+VERTICALE	
+align-items:
+
+	-center			
+	-flex-end		--> elementi in fonto giù
+	-flex-start		--> elementi in alto su
+	-baseline 		--> elementi 
