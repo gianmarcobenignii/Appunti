@@ -1,16 +1,31 @@
+git add -A 
+git commit -m "Appunti"
+git push
+
+
 ORIZZONTALE:
 justify-content:
 
 	-center 	
 	-space-around 		--> allinea gli elementi con spazi uguali intorno ad essi
 	-space-background 	--> allinea gli elementi con spazi uguali tra di loro
-	-flex-end		--> elementi in fondo a dx
-	-flex-start		--> elementi in fondo a sx
+	-flex-end		    --> elementi in fondo a dx
+	-flex-start		    --> elementi in fondo a sx
 
 VERTICALE	
 align-items:
 
 	-center			
-	-flex-end		--> elementi in fonto giù
-	-flex-start		--> elementi in alto su
-	-baseline 		--> elementi 
+	-flex-end		    --> elementi in fonto giù
+	-flex-start		    --> elementi in alto su
+	-baseline 		    --> elementi sulla stessa linea di base 
+    -stretch            --> gli elementi si allungano per riempire tutto il contenitore
+
+FLEX-DIRECTION 
+  
+Questa proprietà definisce la direzione in cui gli elementi verranno posizionati nel contenitore e accetta i seguenti valori:
+
+    -row:               --> Gli elementi sono posizionati nella stessa direzione del testo.
+    -row-reverse:       --> Gli elementi sono posizionati nella direzione opposta al testo.
+    -column:            --> Gli elementi sono posizionati dall'alto verso il basso.
+    -column-reverse:    --> Gli elementi sono posizionati dal basso verso l'alto.
