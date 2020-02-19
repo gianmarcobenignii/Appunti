@@ -8,20 +8,22 @@ justify-content:
 
 	-center 	
 	-space-around 		--> allinea gli elementi con spazi uguali intorno ad essi
-	-space-background 	--> allinea gli elementi con spazi uguali tra di loro
+	-space-between	--> allinea gli elementi con spazi uguali tra di loro
 	-flex-end		    --> elementi in fondo a dx
 	-flex-start		    --> elementi in fondo a sx
-
+______________________________________________________________________________________________________________________________
 VERTICALE	
-align-items:
+align-items:							Esiste anche align-self (stessi parametri di align-items) che agisce su un singolo elemento. Es. .yellow{}
+										Esiste anche align-content per decidere come le linee verranno distanziate tra di loro. 
+
 
 	-center			
 	-flex-end		    --> elementi in fonto giù
 	-flex-start		    --> elementi in alto su
 	-baseline 		    --> elementi sulla stessa linea di base 
     -stretch            --> gli elementi si allungano per riempire tutto il contenitore
-
-FLEX-DIRECTION 
+______________________________________________________________________________________________________________________________
+FLEX-DIRECTION :
   
 Questa proprietà definisce la direzione in cui gli elementi verranno posizionati nel contenitore e accetta i seguenti valori:
 
@@ -29,3 +31,29 @@ Questa proprietà definisce la direzione in cui gli elementi verranno posizionat
     -row-reverse:       --> Gli elementi sono posizionati nella direzione opposta al testo.
     -column:            --> Gli elementi sono posizionati dall'alto verso il basso.
     -column-reverse:    --> Gli elementi sono posizionati dal basso verso l'alto.
+
+
+ORDER:
+
+	0(default)  
+esempio
+		.yellow{						--> ordina l'elemento giallo (come se lo mettessi all'inizio o alla fine di un array)
+			order: -1,0,1				
+		}
+______________________________________________________________________________________________________________________________
+
+FLEX-WARP:
+
+	-nowrap  		--> ogni elemento viene sistemato sulla stessa riga
+	-wrap			-->  Gli elementi vengono sistemati su più righe se non c'è spazio per tutti su una sola riga.
+	-wrap-reverse	--> Gli elementi vengono disposti su più righe in ordine inverso.
+	
+
+______________________________________________________________________________________________________________________________
+
+FLEX-FLOW: 
+
+è praticamente la fusione tra flex-wrap e flex-direction.
+Contiene le proprietà di entrambi.
+Esempio sintassi:
+	flex-flow: row wrap
