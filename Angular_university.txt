@@ -2,6 +2,7 @@ data ={
     title = "godo"
 }
 
+<img src... alt="CACS"> ---> nel caso in cui l'immagine non fosse disponibile, uscirà il messaggio  CACS
 <h1>welcome to {{data.title}}</h1>
 <input class ="demo" [value] ="data.title">
 
@@ -53,3 +54,10 @@ INPUT E OUTPUT
   [style.text-decoration]="'underline'"  --> rende il testo sottolineato.
   Possiamo sotituirlo con:
   [ngStyle] ="{'text-decoration' : 'underline'}"
+  ________________________________________________________________________________________________
+    <div class="course-category" [ngSwitch]="course.category">
+    <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
+    Inserisce la categoria BEGINNER SOLO a quei corsi che hanno category = beginner, le altre le salta
+
+    se una classe non ha la category o la category è null possiamo:
+
