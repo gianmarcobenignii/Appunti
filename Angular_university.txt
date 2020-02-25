@@ -1,0 +1,55 @@
+data ={
+    title = "godo"
+}
+
+<h1>welcome to {{data.title}}</h1>
+<input class ="demo" [value] ="data.title">
+
+per inserire nell'input il title, bisogna inserire le [] attorno a value
+
+
+
+
+Il codice sotto crea una barra dove se scriviamo, cambia automaticamente il titolo:
+
+  onKeyUp(newTitle: string) {
+    this.data.title = newTitle;
+  }
+
+      <input  class="ciao"(keyup)="onKeyUp(titleInput.value)" 
+      [value]="data.title"  #titleInput/>
+      ________________________________________________________________________________________________
+INPUT E OUTPUT
+   APP-COMPONENT-TS  @Input() course: Course;
+                     @Output() courseSelected = new EventEmitter<Course>();
+
+ 
+                    onCourseView() {
+                    console.log("card component - button clicked ...");     output
+                    this.courseSelected.emit(this.course);
+                    }
+
+
+  APP- HTML  <coruse-card (courseSelected)="oncourseSelected($event)" [course]="coreCourse"></coruse-card>
+  ______________________________________________________________________________________________________________________
+  
+  .course-card.beginner{
+  background:lightsalmon; 
+
+}
+
+  <div class="course-card>
+  [ngClass]="'beginner'";  --> ulitizzato maggiormente per condizioni css
+  </div>
+
+
+ [ngClass]="['beginner', course-card]";   --> passo come array, il risultato è uguale a sopra
+
+  [ngClass]="{'beginner':true, 'course-card':true}";>  -->passo come oggetto, il risultato è uguale a sopra
+
+  [ngClass] ="cardClasses()"possiamo creare anche una funzione passandogli la funzione di oggeti sopra citata
+  ________________________________________________________________________________________________
+
+  [style.text-decoration]="'underline'"  --> rende il testo sottolineato.
+  Possiamo sotituirlo con:
+  [ngStyle] ="{'text-decoration' : 'underline'}"

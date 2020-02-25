@@ -2,6 +2,8 @@ git add -A
 git commit -m "Appunti"
 git push
 
+git checkout "nome branch" per switchare il branch
+
 
 ORIZZONTALE:
 justify-content:
