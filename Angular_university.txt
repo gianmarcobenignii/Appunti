@@ -1,3 +1,7 @@
+courses;
+courses$             ---> $specifica che è un observablers
+
+
 data ={
     title = "godo"
 }
@@ -60,4 +64,28 @@ INPUT E OUTPUT
     Inserisce la categoria BEGINNER SOLO a quei corsi che hanno category = beginner, le altre le salta
 
     se una classe non ha la category o la category è null possiamo:
+    ________________________________________________________________________________________________
+CREAZIONE RICHIESTA HTTP
+ <course-card *ngFor="let course of courses"
 
+      constructor(private http: HttpClient) {
+
+  }
+
+  ngOnInit() {
+    this.http.get('/api/courses')
+      .subscribe(
+        courses => this.courses = courses);
+  }
+
+
+  <div class="courses"> <!--Nella div a sx posso inserire *ngIf="courses$ | async as PORCODIO">
+  e nel for sotto posso inserire let course of PORCODIO.
+Il risultato del codice scritto ora non cambia-->
+
+    <course-card *ngFor="let course of (courses$ | async) "
+this.courses$ = this.http.get<Course[]>('/api/courses', { params });
+
+Tra il subscribe "normale e quello con il 
+  courses$: Observable<Course[]>;
+  cambia che nel secondo caso non devo preoccuparmi delle disiscrizioni
