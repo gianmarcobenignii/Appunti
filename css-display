@@ -1,0 +1,49 @@
+Block
+div è l'elemento standard a livello di blocco. 
+Un elemento a livello di blocco inizia su una nuova linea e si estende a sinistra e a destra il più lontano possibile. 
+Altri elementi comuni a livello di blocco sono pe form, e nuovo in HTML5 sono header, footer, sectione altro ancora.
+________________________________________________________________________________________________________
+Inline
+span è  Un elemento inline può avvolgere del testo all'interno di un paragrafo <span> come questo </span> senza interrompere il flusso di quel paragrafo.
+ L' aelemento è l'elemento in linea più comune, poiché li usi per i collegamenti.
+ ________________________________________________________________________________________________________
+ Un altro valore di visualizzazione comune è none. Alcuni elementi specializzati come JavaScript questo come predefinito. 
+ È comunemente usato con JavaScript per nascondere e mostrare elementi senza realmente cancellarli e ricrearli.
+
+Questo è diverso da visibility. L'impostazione sul display non erenderà la pagina come se l'elemento non esistesse. visibility: hidden;
+nasconderà l'elemento, ma l'elemento occuperà comunque lo spazio che sarebbe se fosse completamente visibile.7
+___________________________________________________________________________________________________
+
+<div id = "main">            #main {
+                            width: 600px;
+                            margin: 0 auto; 
+                            }
+
+L'impostazione width è un elemento a livello di blocco impedirà che si estenda verso i bordi del suo contenitore a sinistra e a destra.
+ Quindi, puoi impostare i margini sinistro e destro su autoper centrare orizzontalmente quell'elemento all'interno del suo contenitore.
+Lelemento occuperà la larghezza specificata, quindi lo spazio rimanente verrà diviso equamente tra i due margini.
+L'unico problema si verifica quando la finestra del browser è più stretta della larghezza dell'elemento. 
+Il browser lo risolve creando una barra di scorrimento orizzontale sulla pagina. Miglioriamo la situazione ...
+
+</ Div>
+
+
+quando si utilizza una finestra piccola, come piò essere per mobile, si utilizza max-width
+
+
+___________________________________________________________________________________________________
+Introduzione al Box-model.
+I seguenti codici css, anche se impostiamo un'uguale lunghezza, appaiono di lunghezze differenti
+
+.simple {
+  width: 500px;
+  margin: 20px auto;
+}
+
+.fancy {
+  width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border-width: 10px;
+}
+
