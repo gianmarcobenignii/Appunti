@@ -33,7 +33,7 @@ quando si utilizza una finestra piccola, come piò essere per mobile, si utilizz
 
 ___________________________________________________________________________________________________
 Introduzione al Box-model.
-I seguenti codici css, anche se impostiamo un'uguale lunghezza, appaiono di lunghezze differenti
+I seguenti codici css, anche se impostiamo un'uguale lunghezza di due elemento, questi appaiono di lunghezze differenti
 
 .simple {
   width: 500px;
@@ -46,4 +46,94 @@ I seguenti codici css, anche se impostiamo un'uguale lunghezza, appaiono di lung
   padding: 50px;
   border-width: 10px;
 }
+
+è stata quindi creata la proprietà box-sizing. il codice sopra ora diventerà:
+
+.simple {
+  width: 500px;
+  margin: 20px auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.fancy {
+  width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border: solid blue 10px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+Ora entrambe gli elementi risulteranno di uguale lunghezza,
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;               -> da utilizzare su ogni pagina
+          box-sizing: border-box;
+}
+
+
+Posizioni: 
+Static è la posizione di default. Si dice anche che statoc non sia posizionato
+Relative è praticamente come static, a meno che non si aggiungano altre proprietà come top, right, bottom e left (padre di absolute)
+Fixed, fissa l'elemento in una posizione particolare che vogliamo noi. Questo fa si che l'elemento rimanga fermo (anche se la pagina viene scrollata) 
+Absolute è un elemento posizionato. E'posizionato rispetto al padre (relative  )
+___________________________________________________________________________________________________
+"Responsive Design" è la strategia di creare un sito che "risponda" al browser e al dispositivo su cui viene mostrato ... sembrando fantastico, qualunque cosa accada.
+
+Le query multimediali sono lo strumento più potente per farlo. Prendiamo il nostro layout che utilizza larghezze percentuali e visualizzalo in una colonna quando il browser è troppo piccolo per adattarsi al menu nella barra laterale:
+
+@media screen and (min-width:600px) {
+  nav {
+    float: left;
+    width: 25%;
+  }
+  section {
+    margin-left: 25%;
+  }
+}
+@media screen and (max-width:599px) {
+  nav li {
+    display: inline;
+  }
+}
+___________________________________________________________________________________________________
+clearfix
+.clearfix {
+  overflow: auto;
+}
+si utiizza quando l'immagine è più alta dell'elemento che la contiene ed è flttuante, quindi esce fuori dal suo contenitore
+___________________________________________________________________________________________________
+.box {
+  float: left;
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+.after-box {
+  clear: left;     --> senza il clear left, l'elemento galleggerebbe 
+}
+
+è uguale a 
+
+.box2 {
+  display: inline-block;    --> si può fare a meno del clear:left
+  width: 200px;
+  height: 100px;
+  margin: 1em;
+}
+
+___________________________________________________________________________________________________
+Creazione di 3 colonne0
+.three-column {
+  padding: 1em;
+  -moz-column-count: 3;
+  -moz-column-gap: 1em;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 1em;
+  column-count: 3;
+  column-gap: 1em;
+} 
 
