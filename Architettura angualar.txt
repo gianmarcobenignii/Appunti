@@ -1,0 +1,15 @@
+
+_____________________________________________________________________________________________________________
+CREAZIONE PROGETTO
+
+ng new angular-architecture-example --create-application false --strict
+
+--strict  regolerà i valori di alcuni flag del compilatore Typescript per spingerci a fare le cose giuste
+_____________________________________________________________________________________________________________
+
+CREAZIONE COMPONENTE CON "PROPRIETA' SPECIFICHE"
+
+ng g application my-epic-app --prefix my-org --style scss --routing
+
+
+--prefix da al 'selector' il nome 'my-org', al posto di app-root di default
