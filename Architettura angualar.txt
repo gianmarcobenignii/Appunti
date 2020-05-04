@@ -12,4 +12,4 @@ CREAZIONE COMPONENTE CON "PROPRIETA' SPECIFICHE"
 ng g application my-epic-app --prefix my-org --style scss --routing
 
 
---prefix da al 'selector' il nome 'my-org', al posto di app-root di default
+--prefix da al 'selector' il tag 'my-org', al posto di app-root di default
