@@ -105,3 +105,11 @@ ciò significa che quando premeremo in uno dei due bottoni, cambierà path autom
 il pulsante selezionato si illuminerà in base al valore passatogli, in questo caso 125%.
 Switchando bottone e quindi anche path, il bottone selezionato si illuminerà.
 Tutta sta ramanzina per indicarare in modo più visivo all'utente di capire in quale sezione si trova
+
+_____________________________________________________________________________________________________________
+
+SUGGERIMENTO PER IL LAZY LOADING 
+
+⚠️ SUGGERIMENTO: il modulo condiviso verrà importato da molte funzionalità caricate in modo pigro e per questo motivo non dovrebbe MAI implementare alcun servizio ( providers: [ ]) e contenere solo dichiarabili (componenti, direttive e pipe) e moduli (che contengono solo dichiarabili).
+La ragione di ciò è che ogni modulo caricato in modo pigro otterrebbe la propria istanza di servizio che non è quasi mai ciò che vogliamo perché nella maggior parte dei casi ci aspettiamo che i servizi siano singleton globali!
+Se vogliamo creare servizi "condivisi" usati in molte parti della nostra applicazione, dovremmo implementarli nella /corecartella e usare la providedIn: 'root'sintassi senza inserirli in providers: [ ]alcun modulo ...
