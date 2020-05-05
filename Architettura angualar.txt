@@ -13,3 +13,95 @@ ng g application my-epic-app --prefix my-org --style scss --routing
 
 
 --prefix da al 'selector' il tag 'my-org', al posto di app-root di default
+
+_____________________________________________________________________________________________________________
+
+ng add @angular/material
+
+installa una libreria usando comandi npm dove verranno aggiunte alcune opzioni che possono essere personalizzate 
+
+_____________________________________________________________________________________________________________
+   "analyze": "ng build --prod --stats-json && webpack-boundle-analyzer ./dist/my-epic-app/stats-es2015.json"
+
+   lo script crea la nostra applicazione per la produzione, perchè stiamo usando --prod.
+   
+   raccogliamo anche statistiche su tutti i moduli elavorati della build perchè stiamo usando --stats-json
+
+    Il risultato finale verrà stats-es2015.jsonarchiviato accanto a tutti gli altri bundle Javascript.
+
+L'ultimo passaggio è chiamare webpack-bundle-analyzere passare il percorso al file generato.
+
+_____________________________________________________________________________________________________________
+
+ng g m core
+
+genera un  nuovo CoreModue.
+
+Il CoreModule importerà la maggior parte delle cose necessarie dall'inizio per mantenere quasi vuoto il nostro AppModule
+mentre AppModule rimarrà praticamente vuoto per l'intera durata del progetto, tutto ciò che deve essere disponibile dall'inizio verrà aggiunto al CoreModule
+
+Possiamo importare in Core.module.ts i seguenti import:
+BrowserModule,
+BrowserModuleAnimation.
+
+Possiamo quindi togliere da appMoule gli import sopraelencati.
+
+Nella generazione del CoreModule, verrà inserito automaticamente negli import "CommonModule"
+che serve per le dichiarazioni di angular (come *ngIf, *ngFor ecc..) però, i precedenti comandi possono essere utilizzati grazie all'import
+di BrowserModule. Possiamo quindi eliminare CommonModule, perchè sarebbe una semplice e non necessaria duplicazione
+
+
+
+_____________________________________________________________________________________________________________
+ng g c core/layout/main-layout
+
+questo comando ci genererà dentro la cartella core una cartella chiamata layout / main-layout
+dove all'interò verrà generati i componenti (ts, html, css spec.ts)
+
+Non dobbiamo preoccuparci di aggiungere nelle dichiarazioni di CoreMoudule.
+Dobbiamo però importare manualmente sotto gli import
+"export: [MainLayoutComponent]". 
+
+la generazione dei componenti con selector in component.ts è my-org-main-layout.
+
+Se aggiungiamo in app.component.html , il seguente tag <my-org-main-layout></my-org-main-layout> per leggere l'html di mainLayout,
+questo non potrà essere letto fino a quando non effettueremo manuelmente l'export citato sorpa dentro CoreModue (questo perchè si tratta di un export e non di un import!)
+
+_____________________________________________________________________________________________________________
+
+ng g m features/home --route home --module
+
+Con questo comando viene generato un module sotto una cartella features/home
+
+Verranno creati i seguenti file:
+
+1- home-routing.module.ts
+2- home.component.html
+3- home.component.scss
+4- home.component.spec.ts
+5- home.component.ts
+6- home.module.ts
+
+La cosa bella di questo comando è che crea dentro l'app-routing.module il path per la navigaione verso /home 
+(questo perchè alla creazione del bottone in main-layout.componen.html abbiamo iserito il routerLink="home")
+
+_____________________________________________________________________________________________________________
+
+inserendo dentro i bottoni  routerLinkActive="active"
+
+passeremo a routerLInkActive l'id ="active" 
+
+ed inserendo come css la seguente proprietà  
+
+button{
+  margin: 0 10px;
+
+  &.active{
+    filter:brightness(125%);
+  }
+}
+
+ciò significa che quando premeremo in uno dei due bottoni, cambierà path automaticamente, ed essendoci il comando routerLinkActive, 
+il pulsante selezionato si illuminerà in base al valore passatogli, in questo caso 125%.
+Switchando bottone e quindi anche path, il bottone selezionato si illuminerà.
+Tutta sta ramanzina per indicarare in modo più visivo all'utente di capire in quale sezione si trova
