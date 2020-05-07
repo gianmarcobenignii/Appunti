@@ -89,3 +89,51 @@ this.courses$ = this.http.get<Course[]>('/api/courses', { params });
 Tra il subscribe "normale e quello con il 
   courses$: Observable<Course[]>;
   cambia che nel secondo caso non devo preoccuparmi delle disiscrizioni
+
+
+
+
+  ________________________________________________________________________________________________
+
+  promise e osservable
+
+  sono due metodi asincroni
+
+  promise --> callback, ritorna SEMPRE un valore che può essere true o false, con un solo valore, non posso intercettare il messaggio.
+  Alla risposta posso fare 3 azioni.
+  1) .then() risposta buona, se la risposta è buona chiudo lo spinner 
+  2) .catch() errore
+  3) .finally() fai sia se la risposta è buona che non, usato sia se devo usare il then che catch
+  
+
+  observable --> message, faccio una subscription e posso ottenere più messaggi nel tempo, NON si riceve SEMPRE un valore.
+  In observable possso intercettare il messaggio
+
+  Azioni:
+
+  .subscribe()
+  .pipe(), posso intercettare e lavorare prima che il messaggio arrivi 
+        dentro al pipe ci può essere il map(), tap(), take(1) --> vuole un parametro di riferimento, uando i messaggi ricevono il parametro di riferimento, il subscribe viene chiuso, 
+         takeuntil(M)finchè non ottiene un dato messaggio è uguale al parametro, se è così chiudi,
+         .catchError()
+         .complete() uanto un observable viene completata
+
+
+         Promise --> comunicazione 1 a 1
+
+
+         Observable -->tiene d'occhio tutte le sottoscrizioni. Se non chiudo il subscribe la richeista rimane aperta (da non fare)
+________________________________________________________________________________________________
+
+Websocket fino al 2009 era client server, ossia richiesta risposta ecc
+
+richiesta --->  
+                SERVER
+risposta <---  
+
+
+ora
+client -----> server
+      <------ server
+
+      
